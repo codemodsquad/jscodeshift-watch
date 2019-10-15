@@ -1,11 +1,16 @@
 {
-  "name": "untranspiled-js-library-skeleton",
+  "name": "jscodeshift-watch",
   "version": "0.0.0-development",
-  "description": "my skeleton for transpiler-free JS packages",
+  "description": "rerun a jscodeshift transform whenever it changes",
+  "bin": {
+    "jscodeshift-watch": "./index.js",
+    "jscw": "./index.js"
+  },
   "main": "index.js",
   "author": "Andy Edwards",
   "license": "MIT",
   "scripts": {
+    "start": "node index.js",
     "lint": "eslint *.js test --cache",
     "lint:fix": "eslint --fix *.js test --cache",
     "lint:watch": "esw --watch *.js test --cache",
@@ -58,15 +63,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jedwards1211/untranspiled-js-library-skeleton.git"
+    "url": "https://github.com/jedwards1211/jscodeshift-watch.git"
   },
   "keywords": [
-    "skeleton"
+    "jscodeshift",
+    "watch"
   ],
   "bugs": {
-    "url": "https://github.com/jedwards1211/untranspiled-js-library-skeleton/issues"
+    "url": "https://github.com/jedwards1211/jscodeshift-watch/issues"
   },
-  "homepage": "https://github.com/jedwards1211/untranspiled-js-library-skeleton#readme",
+  "homepage": "https://github.com/jedwards1211/jscodeshift-watch#readme",
   "devDependencies": {
     "@commitlint/cli": "^6.0.2",
     "@commitlint/config-conventional": "^6.0.2",
@@ -104,5 +110,12 @@
     "major": {
       "automerge": false
     }
+  },
+  "dependencies": {
+    "inquirer": "^7.0.0",
+    "jscodeshift": "^0.6.4",
+    "print-diff": "^0.1.1",
+    "smart-restart": "^2.2.0",
+    "yargs": "^14.2.0"
   }
 }
