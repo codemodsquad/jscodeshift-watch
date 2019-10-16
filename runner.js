@@ -31,7 +31,7 @@ for (const file of files) {
         ? jscodeshift.withParser(transform.parser)
         : jscodeshift,
       stats: () => {},
-      report: (...args) => reports.push(args),
+      report: msg => reports.push(msg),
     },
     {}
   )
@@ -67,10 +67,12 @@ if (Object.keys(results).length) {
       },
     ])
     .then(({ apply }) => {
-      if (!apply) return
-      for (const file in results) {
-        fs.writeFileSync(file, results[file], 'utf8')
-        console.error(`Wrote ${file}`)
+      if (apply) {
+        for (const file in results) {
+          fs.writeFileSync(file, results[file], 'utf8')
+          console.error(`Wrote ${file}`)
+        }
       }
+      process.send({ exit: 0 })
     })
 }
