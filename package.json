@@ -63,16 +63,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jedwards1211/jscodeshift-watch.git"
+    "url": "https://github.com/codemodsquad/jscodeshift-watch.git"
   },
   "keywords": [
     "jscodeshift",
     "watch"
   ],
   "bugs": {
-    "url": "https://github.com/jedwards1211/jscodeshift-watch/issues"
+    "url": "https://github.com/codemodsquad/jscodeshift-watch/issues"
   },
-  "homepage": "https://github.com/jedwards1211/jscodeshift-watch#readme",
+  "homepage": "https://github.com/codemodsquad/jscodeshift-watch#readme",
   "devDependencies": {
     "@commitlint/cli": "^6.0.2",
     "@commitlint/config-conventional": "^6.0.2",
